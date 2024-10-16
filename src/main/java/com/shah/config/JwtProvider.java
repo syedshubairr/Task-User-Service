@@ -30,7 +30,7 @@ public class JwtProvider {
     public static String getEmailFromJwt(String jwt) {
         jwt = jwt.substring(7);
         Claims claim = Jwts.parserBuilder()
-                .setSigningKey(key).build().parseClaimsJwt(jwt)
+                .setSigningKey(key).build().parseClaimsJws(jwt)
                 .getBody();
 //        This is returning email, extracted by JWT Token.
         return String.valueOf(claim.get("email"));
