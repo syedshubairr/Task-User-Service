@@ -14,6 +14,8 @@ server:
   port: 5001
 
 eureka:
+  instances:
+    prefer-ip-address: true
   client:
     register-with-eureka: true
     fetch-registry: true
